@@ -96,9 +96,9 @@
               }
             });
 
-            setTimeout(() => {
-              done();
-            }, 500);
+            // setTimeout(() => {
+            //   done();
+            // }, 500);
           }
           portfolio.setAttribute("position", "0 " + y + " -0.01");
         }, 10);
@@ -114,7 +114,7 @@
             onDone();
           }
           // 1.001 -0.25 0
-          avatar.setAttribute("position", "1.001 -0.5 " + z);
+          avatar.setAttribute("position", "1.2001 -0.5 -0.5");
         }, 10);
       }
 
@@ -125,11 +125,9 @@
             showAvatar(() => {
               setTimeout(() => {
                 showPortfolio(() => {
-                  setTimeout(() => {
-                    showInfo();
-                  }, 300);
                 });
               }, 300);
+              showInfo();
             });
           });
           this.el.addEventListener('targetLost', event => {
@@ -244,7 +242,7 @@
           <img id="coffeemachine-preview" src="./assets/card-example/portfolio/coffeemachine-preview.png" />
           <img id="peak-preview" src="./assets/card-example/portfolio/peak-preview.png" />
           
-          <a-asset-item id="avatarModel" src="./assets/card-example/models/scene.gltf"></a-asset-item>
+          <a-asset-item id="avatarModel" src="./assets/card-example/models/source/scene.gltf"></a-asset-item>
         </a-assets>
 
         <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable">
@@ -290,7 +288,7 @@
           ></a-image>
 
           <!-- <a-gltf-model id="avatar" rotation="0 0 0" position="0 -0.25 0" scale="0.004 0.004 0.004" src="#avatarModel"></a-gltf-model> -->
-          <a-gltf-model id="avatar" rotation="0 0 0" position="1.001 -0.9 0" scale="0.03 0.03 0.03" src="#avatarModel"></a-gltf-model>
+          <a-gltf-model id="avatar" rotation="0 0 0" position="1.001 -0.9 0" scale="0.19 0.19 0.19" src="#avatarModel"></a-gltf-model>
 
           <a-text id="text" class="clickable" value="" color="black" align="center" width="2" position="0 -0.7 0" geometry="primitive:plane; height: 0.1; width: 2;" material="opacity: 0.5"></a-text>
         </a-entity>
